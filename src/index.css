@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THE GRAND BUDAPEST HOTEL Management Platform Design System
+Luxury Blue & White theme with Gold accents
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Luxury Hotel Theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    /* Popover System */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Primary - Luxury Navy Blue */
+    --primary: 215 84% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Blue */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 215 25% 27%;
+
+    /* Muted System */
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Luxury Gold */
+    --accent: 45 93% 58%;
+    --accent-foreground: 215 25% 27%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success - Hotel Green */
+    --success: 142 72% 29%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Gold */
+    --warning: 45 93% 58%;
+    --warning-foreground: 215 25% 27%;
+
+    /* Borders & Inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 84% 34%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Custom Hotel Colors */
+    --hotel-navy: 215 84% 34%;
+    --hotel-navy-light: 215 84% 45%;
+    --hotel-navy-dark: 215 84% 25%;
+    --hotel-gold: 45 93% 58%;
+    --hotel-gold-light: 45 93% 68%;
+    --hotel-gold-dark: 45 93% 48%;
+    --hotel-cream: 45 25% 97%;
+    --hotel-silver: 220 9% 46%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--hotel-navy)), hsl(var(--hotel-navy-light)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--hotel-gold)), hsl(var(--hotel-gold-light)));
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--hotel-navy)), hsl(var(--hotel-gold)));
+
+    /* Shadows */
+    --shadow-luxury: 0 10px 30px -10px hsl(var(--hotel-navy) / 0.2);
+    --shadow-gold: 0 5px 20px -5px hsl(var(--hotel-gold) / 0.3);
+    --shadow-elegant: 0 4px 20px -4px hsl(215 25% 27% / 0.1);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Elegant Navy & Gold */
+    --background: 215 84% 8%;
+    --foreground: 45 25% 97%;
+
+    --card: 215 84% 12%;
+    --card-foreground: 45 25% 97%;
+
+    --popover: 215 84% 12%;
+    --popover-foreground: 45 25% 97%;
+
+    --primary: 45 93% 58%;
+    --primary-foreground: 215 84% 8%;
+
+    --secondary: 215 84% 18%;
+    --secondary-foreground: 45 25% 97%;
+
+    --muted: 215 84% 18%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 215 84% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 72% 29%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 93% 58%;
+    --warning-foreground: 215 84% 8%;
+
+    --border: 215 84% 18%;
+    --input: 215 84% 18%;
+    --ring: 45 93% 58%;
+
+    /* Dark Hotel Colors */
+    --hotel-navy: 215 84% 15%;
+    --hotel-navy-light: 215 84% 25%;
+    --hotel-navy-dark: 215 84% 8%;
+    --hotel-gold: 45 93% 58%;
+    --hotel-gold-light: 45 93% 68%;
+    --hotel-gold-dark: 45 93% 48%;
+    --hotel-cream: 45 25% 15%;
+    --hotel-silver: 220 9% 60%;
+
+    --sidebar-background: 215 84% 10%;
+    --sidebar-foreground: 45 25% 97%;
+    --sidebar-primary: 45 93% 58%;
+    --sidebar-primary-foreground: 215 84% 8%;
+    --sidebar-accent: 215 84% 15%;
+    --sidebar-accent-foreground: 45 25% 97%;
+    --sidebar-border: 215 84% 15%;
+    --sidebar-ring: 45 93% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Luxury Hotel Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+
+  /* Custom animations */
+  @keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { 
+      box-shadow: 0 0 0 0 hsl(var(--hotel-gold) / 0.4);
+    }
+    50% { 
+      box-shadow: 0 0 0 10px hsl(var(--hotel-gold) / 0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+}
+
+@layer components {
+  /* Custom Hotel Components */
+  .luxury-gradient {
+    background: var(--gradient-luxury);
+  }
+
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .luxury-shadow {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .gold-shadow {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .elegant-shadow {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .bounce-transition {
+    transition: var(--transition-bounce);
+  }
+
+  .shimmer-loading {
+    background: linear-gradient(90deg, transparent, hsl(var(--muted)), transparent);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .pulse-gold {
+    animation: pulse-gold 2s infinite;
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+}
